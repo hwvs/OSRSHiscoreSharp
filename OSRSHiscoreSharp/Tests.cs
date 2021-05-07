@@ -11,14 +11,8 @@ using OSRSHiscoreSharp.Util;
 
 namespace OSRSHiscoreSharp
 {
-    public class Testing
+    public class Tests
     {
-        public static async Task Main(string[] args)
-        {
-            var testing = new Testing();
-            await testing.TestMethod1();
-            Console.ReadLine();
-        }
 
         [Fact]
         public async Task TestMethod1()
@@ -31,6 +25,15 @@ namespace OSRSHiscoreSharp
 
             Debug.WriteLine(player.ToString());
             Console.WriteLine(player.ToString());
+        }
+
+
+        // EntryPoint Test
+        public static async Task Main(string[] args)
+        {
+            var testing = new Tests();
+            await testing.TestMethod1();
+            Console.ReadLine();
         }
     }
 }
