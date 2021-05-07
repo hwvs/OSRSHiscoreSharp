@@ -9,18 +9,25 @@ namespace OSRSHiscoreSharp.Util
 {
     public class HiscoreGamemode
     {
-        public static HiscoreGamemode NORMAL = new HiscoreGamemode("");
-        public static HiscoreGamemode IRONMAN = new HiscoreGamemode("_ironman");
-        public static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("_ultimate");
-        public static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("_hardcore_ironman");
-        public static HiscoreGamemode DMM = new HiscoreGamemode("_deadman");
-        public static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("_seasonal");
-        public static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("_tournament");
+        public static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","");
+        public static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman");
+        public static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate");
+        public static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("Hardcore Ironman", "_hardcore_ironman");
+        public static HiscoreGamemode DMM = new HiscoreGamemode("Deadman Mode", "_deadman");
+        public static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("Deadman Mode Seasonal", "_seasonal");
+        public static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("Deadman Mode Tournament", "_tournament");
 
+        public string Name { get; private set; }
         public string URL { get; private set; }
-        public HiscoreGamemode(string URL)
+        public HiscoreGamemode(string name, string URL)
         {
+            this.Name = name;
             this.URL = URL;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
     public class HiscoreLookup
@@ -59,6 +66,9 @@ namespace OSRSHiscoreSharp.Util
 
             var list = HiscoreDataParserFactory.ParseDataIntoList(data);
             var player = HiscoreDataParserFactory.ConvertListOfRecordsToPlayerRecord(list);
+
+            player.Name = playername;
+            player.Gamemode = gamemode;
 
             return player;
         }
