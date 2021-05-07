@@ -41,6 +41,13 @@ namespace OSRSHiscoreSharp.Util
             try
             {
                 data = await Web.GETRequest(uri);
+
+                // Extra sanity check
+                if (data.Length == 0 || data.Contains("<html>"))
+                {
+                    System.Diagnostics.Debugger.Break();
+                    throw new Exception();
+                }
             }
             catch (System.Net.WebException ex)
             {
