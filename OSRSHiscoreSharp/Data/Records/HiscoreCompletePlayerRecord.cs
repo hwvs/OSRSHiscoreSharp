@@ -16,10 +16,26 @@ namespace OSRSHiscoreSharp.Data
         
         public Dictionary<string, HiscoreSingleRecord> Skills { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
 
+        public HiscoreSingleRecord LeaguePoints = new HiscoreSingleRecord();
+
+        public Dictionary<string, HiscoreSingleRecord> BountyHunter { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
+        public Dictionary<string, HiscoreSingleRecord> Clues { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
+
 
         public override string ToString()
         {
-            return $"Name: {Name}\nGamemode: {Gamemode}\n\n-- Skills --\n{String.Join("\n",Skills.Keys.Select(k=> $"{k}: {Skills[k].ToString()}").ToArray())}";
+            Func<Dictionary<string, HiscoreSingleRecord>, string> ConvertRecordsToString = (record) =>
+            {
+                return String.Join("\n", record.Keys.Select(k => $"{k}: {record[k].ToString()}").ToArray());
+            };
+
+            return $"Name: {Name}\n" +
+                $"Gamemode: {Gamemode}\n\n" +
+                $"-- Skills --\n{ConvertRecordsToString(Skills)}\n" +
+                $"-- League --\nLeague Points: {LeaguePoints}\n" +
+                $"-- BountyHunter --\n{ConvertRecordsToString(BountyHunter)}\n" +
+                $"-- Clues --\n{ConvertRecordsToString(Clues)}\n" +
+                "";
         }
     }
 }

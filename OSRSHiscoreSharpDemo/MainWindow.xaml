@@ -18,8 +18,7 @@
             <RowDefinition Height="80px" />
             <RowDefinition Height="40px" />
             <RowDefinition Height="25px" />
-            <RowDefinition Height="461*" />
-            <RowDefinition Height="178*"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" VerticalAlignment="Top" Margin="5,5,5,0"
@@ -44,7 +43,7 @@
         <Label Grid.Row="1" Foreground="#fff" VerticalAlignment="Top" FontSize="12px" Margin="0,35,0,0" Grid.RowSpan="2">
             <TextBlock Name="lbStatus">Waiting...</TextBlock>
         </Label>
-        <Label Grid.Row="2" Foreground="#fff" VerticalAlignment="Top" FontSize="12px" Margin="0,20,0,0" Grid.RowSpan="2">
+        <Label Grid.Row="2" Foreground="#fff" VerticalAlignment="Top" FontSize="8px" Margin="0,20,0,0" Grid.RowSpan="2">
             <TextBlock Name="lbDebug">[debug]</TextBlock>
         </Label>
     </Grid>

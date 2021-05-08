@@ -39,5 +39,20 @@ namespace OSRSHiscoreSharp.Data
             "hunter",
             "construction",
         };
+
+        internal static readonly string[] BOUNTY_HUNTER = new string[] {
+            "hunter",
+            "rogue",
+        };
+
+        internal static readonly string[] CLUE_NAMES = new string[] {
+            "all",
+            "beginner",
+            "easy",
+            "medium",
+            "hard",
+            "elite",
+            "master"
+        };
     }
 }
