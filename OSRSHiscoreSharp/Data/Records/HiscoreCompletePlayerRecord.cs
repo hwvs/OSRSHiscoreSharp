@@ -15,11 +15,13 @@ namespace OSRSHiscoreSharp.Data
 
         
         public Dictionary<string, HiscoreSingleRecord> Skills { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
+        public Dictionary<string, HiscoreSingleRecord> Minigames { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
 
         public HiscoreSingleRecord LeaguePoints = new HiscoreSingleRecord();
 
         public Dictionary<string, HiscoreSingleRecord> BountyHunter { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
         public Dictionary<string, HiscoreSingleRecord> Clues { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
+        public Dictionary<string, HiscoreSingleRecord> Bosses { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
 
 
         public override string ToString()
@@ -32,10 +34,14 @@ namespace OSRSHiscoreSharp.Data
             return $"Name: {Name}\n" +
                 $"Gamemode: {Gamemode}\n\n" +
                 $"-- Skills --\n{ConvertRecordsToString(Skills)}\n" +
-                $"-- League --\nLeague Points: {LeaguePoints}\n" +
+                $"-- League --\nLeague Points: {LeaguePoints.ToString()}\n" +
+                $"-- Minigames --\n{ConvertRecordsToString(Minigames)}\n" +
                 $"-- BountyHunter --\n{ConvertRecordsToString(BountyHunter)}\n" +
                 $"-- Clues --\n{ConvertRecordsToString(Clues)}\n" +
+                $"-- Bosses --\n{ConvertRecordsToString(Bosses)}\n" +
                 "";
         }
+
+
     }
 }

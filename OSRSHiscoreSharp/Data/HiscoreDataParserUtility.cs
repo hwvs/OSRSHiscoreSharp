@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace OSRSHiscoreSharp.Data
 {
-    public class HiscoreDataParserFactory
+    public class HiscoreDataParserUtility
     {
-        public static List<HiscoreSingleRecord> ParseDataIntoList(string csvString)
+
+
+        public static HiscoreCompletePlayerRecord CreatePlayerRecordFromCSV(string csvString)
+        {
+            var list = HiscoreDataParserUtility.ParseDataIntoList(csvString);
+            var player = HiscoreDataParserUtility.ConvertListOfRecordsToPlayerRecord(list);
+
+            return player;
+        }
+
+
+        private static List<HiscoreSingleRecord> ParseDataIntoList(string csvString)
         {
             // Split it by each newline, then for each row create a new HiscoreSingleRecord object into a list which is returned
             return csvString.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
@@ -16,7 +27,7 @@ namespace OSRSHiscoreSharp.Data
                 .ToList();
         }
 
-        public static HiscoreCompletePlayerRecord ConvertListOfRecordsToPlayerRecord(List<HiscoreSingleRecord> singleRecords)
+        private static HiscoreCompletePlayerRecord ConvertListOfRecordsToPlayerRecord(List<HiscoreSingleRecord> singleRecords)
         {
             HiscoreCompletePlayerRecord result = new HiscoreCompletePlayerRecord();
 
@@ -39,6 +50,11 @@ namespace OSRSHiscoreSharp.Data
             dequeueViaArray(result.BountyHunter, HiscoreConstants.BOUNTY_HUNTER);
             // Load all clues
             dequeueViaArray(result.Clues, HiscoreConstants.CLUE_NAMES);
+            // Load all minigames
+            dequeueViaArray(result.Minigames, HiscoreConstants.MINIGAME_NAMES);
+            // Load all bosses
+            dequeueViaArray(result.Bosses, HiscoreConstants.BOSS_NAMES);
+
 
             return result;
         }

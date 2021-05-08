@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OSRSHiscoreSharpDemo"
         mc:Ignorable="d"
-        Title="OSRSHiscore.NET Demo" Height="800" Width="450"
+        Title="OSRSHiscoreSharp Demo" Height="800" Width="450"
         Background="#222"
         Foreground="#fff"
         MinHeight="300"
@@ -14,6 +14,10 @@
          FontSize="16"
         >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="343*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="80px" />
             <RowDefinition Height="40px" />
@@ -21,29 +25,30 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" VerticalAlignment="Top" Margin="5,5,5,0"
+        <Grid VerticalAlignment="Center" Margin="5,0,5,0" Grid.ColumnSpan="2"
         >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="19*" />
+                <ColumnDefinition Width="36*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.5*" />
                 <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Foreground="#fff" VerticalAlignment="Center">Lookup a user</Label>
-            <TextBox Grid.Row="1" Name="tbUsername" FontSize="24" VerticalAlignment="Center" Foreground="#fff" Background="#111">
+            <Label Foreground="#fff" VerticalAlignment="Center" Grid.ColumnSpan="2">Lookup a user</Label>
+            <TextBox Grid.Row="1" Name="tbUsername" FontSize="24" VerticalAlignment="Center" Foreground="#fff" Background="#111" Grid.ColumnSpan="2">
                 Dedwilson
             </TextBox>
 
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Top" Margin="5,5,5,0">
+        <Grid Grid.Row="1" VerticalAlignment="Top" Margin="5,5,5,0" Grid.ColumnSpan="2">
             <Button Grid.Column="1" Click = "OnClickLookup">Lookup</Button>
         </Grid>
-        <Label Grid.Row="1" Foreground="#fff" VerticalAlignment="Top" FontSize="12px" Margin="0,35,0,0" Grid.RowSpan="2">
+        <Label Grid.Row="1" Foreground="#fff" VerticalAlignment="Top" FontSize="12px" Margin="0,35,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Name="lbStatus">Waiting...</TextBlock>
         </Label>
-        <Label Grid.Row="2" Foreground="#fff" VerticalAlignment="Top" FontSize="8px" Margin="0,20,0,0" Grid.RowSpan="2">
+        <Label Grid.Row="2" Foreground="#fff" VerticalAlignment="Top" FontSize="8px" Margin="0,20,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Name="lbDebug">[debug]</TextBlock>
         </Label>
     </Grid>

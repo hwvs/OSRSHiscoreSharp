@@ -9,13 +9,13 @@ namespace OSRSHiscoreSharp.Util
 {
     public class HiscoreGamemode
     {
-        public static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","");
-        public static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman");
-        public static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate");
-        public static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("Hardcore Ironman", "_hardcore_ironman");
-        public static HiscoreGamemode DMM = new HiscoreGamemode("Deadman Mode", "_deadman");
-        public static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("Deadman Mode Seasonal", "_seasonal");
-        public static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("Deadman Mode Tournament", "_tournament");
+        public readonly static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","");
+        public readonly static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman");
+        public readonly static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate");
+        public readonly static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("Hardcore Ironman", "_hardcore_ironman");
+        public readonly static HiscoreGamemode DMM = new HiscoreGamemode("Deadman Mode", "_deadman");
+        public readonly static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("Deadman Mode Seasonal", "_seasonal");
+        public readonly static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("Deadman Mode Tournament", "_tournament");
 
         public string Name { get; private set; }
         public string URL { get; private set; }
@@ -64,8 +64,7 @@ namespace OSRSHiscoreSharp.Util
                     throw new Exception("Error looking up user, either network error or player doesn't exist");
             }
 
-            var list = HiscoreDataParserFactory.ParseDataIntoList(data);
-            var player = HiscoreDataParserFactory.ConvertListOfRecordsToPlayerRecord(list);
+            var player = HiscoreDataParserUtility.CreatePlayerRecordFromCSV(data);
 
             player.Name = playername;
             player.Gamemode = gamemode;

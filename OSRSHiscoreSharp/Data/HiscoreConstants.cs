@@ -45,6 +45,11 @@ namespace OSRSHiscoreSharp.Data
             "rogue",
         };
 
+        internal static readonly string[] MINIGAME_NAMES = new string[] {
+            "lms",
+            "soulwars",
+        };
+
         internal static readonly string[] CLUE_NAMES = new string[] {
             "all",
             "beginner",
@@ -54,5 +59,54 @@ namespace OSRSHiscoreSharp.Data
             "elite",
             "master"
         };
+
+        internal static readonly string[] BOSS_NAMES = new string[] {
+            "abyssalSire",
+            "alchemicalHydra",
+            "barrows",
+            "bryophyta",
+            "callisto",
+            "cerberus",
+            "chambersOfXeric",
+            "chambersOfXericChallengeMode",
+            "chaosElemental",
+            "chaosFanatic",
+            "commanderZilyana",
+            "corporealBeast",
+            "crazyArchaeologist",
+            "dagannothPrime",
+            "dagannothRex",
+            "dagannothSupreme",
+            "derangedArchaeologist",
+            "generalGraardor",
+            "giantMole",
+            "grotesqueGuardians",
+            "hespori",
+            "kalphiteQueen",
+            "kingBlackDragon",
+            "kraken",
+            "kreeArra",
+            "krilTsutsaroth",
+            "mimic",
+            "nightmare",
+            "obor",
+            "sarachnis",
+            "scorpia",
+            "skotizo",
+            "tempoross",
+            "gauntlet",
+            "corruptedGauntlet",
+            "theatreOfBlood",
+            "thermonuclearSmokeDevil",
+            "tzKalZuk",
+            "tzTokJad",
+            "venenatis",
+            "vetion",
+            "vorkath",
+            "wintertodt",
+            "zalcano",
+            "zulrah",
+        };
+
     }
 }
