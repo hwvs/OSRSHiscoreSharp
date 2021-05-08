@@ -23,6 +23,7 @@
             <RowDefinition Height="40px" />
             <RowDefinition Height="25px" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid VerticalAlignment="Center" Margin="5,0,5,0" Grid.ColumnSpan="2"
@@ -49,7 +50,8 @@
             <TextBlock Name="lbStatus">Waiting...</TextBlock>
         </Label>
         <Label Grid.Row="2" Foreground="#fff" VerticalAlignment="Top" FontSize="8px" Margin="0,20,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <TextBlock Name="lbDebug">[debug]</TextBlock>
+            <TextBlock Name="lbDebug" ScrollViewer.VerticalScrollBarVisibility="Visible">[debug]</TextBlock>
         </Label>
+
     </Grid>
 </Window>

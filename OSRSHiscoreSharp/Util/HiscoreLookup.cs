@@ -9,6 +9,8 @@ namespace OSRSHiscoreSharp.Util
 {
     public class HiscoreGamemode
     {
+        // The C# style guide doesn't say constants should be capitalized, but I think they should because it enhances
+        // readability. H*ck off, Microsoft.
         public readonly static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","");
         public readonly static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman");
         public readonly static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate");
@@ -36,9 +38,9 @@ namespace OSRSHiscoreSharp.Util
         /// Performs a lookup a player and returns the results as an HiscoreCompletePlayerRecord object
         /// </summary>
         /// <param name="playername">The name of the player as a string</param>
-        /// <param name="gamemode">The type of account to lookup, as a HiscoreGamemode object</param>
+        /// <param name="gamemode">The type of account to lookup, as a HiscoreGamemode object (EG: HiscoreGamemode.IRONMAN)</param>
         /// <returns>Returns HiscoreCompletePlayerRecord on success, null on failure, throws exception if error</returns>
-        public async static Task<HiscoreCompletePlayerRecord> LookupPlayerStats(string playername, HiscoreGamemode gamemode = null)
+        public async static Task<HiscoreCompletePlayerResult> LookupPlayerStats(string playername, HiscoreGamemode gamemode = null)
         {
             if (gamemode == null)
                 gamemode = HiscoreGamemode.NORMAL;
@@ -52,7 +54,7 @@ namespace OSRSHiscoreSharp.Util
                 // Extra sanity check
                 if (data.Length == 0 || data.Contains("<html>"))
                 {
-                    System.Diagnostics.Debugger.Break();
+                    //System.Diagnostics.Debugger.Break();
                     throw new Exception();
                 }
             }

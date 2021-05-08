@@ -30,6 +30,8 @@ namespace OSRSHiscoreSharpDemo
 
         private async void OnClickLookup(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait; // set the cursor to loading spinner
+
             Stopwatch sw = new Stopwatch();
             sw.Start();
             try
@@ -55,6 +57,8 @@ namespace OSRSHiscoreSharpDemo
             {
                 lbStatus.Text = $"Error: {ex.Message}";
             }
+
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow; // set the cursor back to arrow
         }
     }
 }

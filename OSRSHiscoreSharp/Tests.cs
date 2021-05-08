@@ -19,8 +19,8 @@ namespace OSRSHiscoreSharp
         {
             var player = await HiscoreLookup.LookupPlayerStats("dedwilson", HiscoreGamemode.NORMAL);
 
-            Assert.True(player.Skills.Count == 24, "Incorrect number of player skills");
-            Assert.True(player.Skills["overall"].Extra == 4600000000, "Incorrect total xp");
+            Assert.True(player.Records.Skills.Count == 24, "Incorrect number of player skills");
+            Assert.True(player.Records.Skills["overall"].Extra == 4600000000, "Incorrect total xp");
 
 
             Debug.WriteLine(player.ToString());
