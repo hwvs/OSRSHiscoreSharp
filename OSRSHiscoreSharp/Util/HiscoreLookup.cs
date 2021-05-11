@@ -11,20 +11,27 @@ namespace OSRSHiscoreSharp.Util
     {
         // The C# style guide doesn't say constants should be capitalized, but I think they should because it enhances
         // readability. H*ck off, Microsoft.
-        public readonly static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","");
-        public readonly static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman");
-        public readonly static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate");
-        public readonly static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("Hardcore Ironman", "_hardcore_ironman");
-        public readonly static HiscoreGamemode DMM = new HiscoreGamemode("Deadman Mode", "_deadman");
-        public readonly static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("Deadman Mode Seasonal", "_seasonal");
-        public readonly static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("Deadman Mode Tournament", "_tournament");
+        public readonly static HiscoreGamemode NORMAL = new HiscoreGamemode("Normal","","normal");
+        public readonly static HiscoreGamemode IRONMAN = new HiscoreGamemode("Ironman", "_ironman","im");
+        public readonly static HiscoreGamemode IRONMAN_ULTIMATE = new HiscoreGamemode("Ultimate Ironman", "_ultimate", "uim");
+        public readonly static HiscoreGamemode IRONMAN_HARDCORE = new HiscoreGamemode("Hardcore Ironman", "_hardcore_ironman", "hcim");
+        public readonly static HiscoreGamemode DMM = new HiscoreGamemode("Deadman Mode", "_deadman", "dmm");
+        public readonly static HiscoreGamemode DMM_SEASONAL = new HiscoreGamemode("Deadman Mode Seasonal", "_seasonal", "sdmm");
+        public readonly static HiscoreGamemode DMM_TOURNAMENT = new HiscoreGamemode("Deadman Mode Tournament", "_tournament", "dmmt");
+
+        public readonly static HiscoreGamemode[] ALL = new HiscoreGamemode[]
+        {
+            NORMAL,IRONMAN,IRONMAN_ULTIMATE,IRONMAN_HARDCORE,DMM,DMM_SEASONAL,DMM_TOURNAMENT
+        };
 
         public string Name { get; private set; }
         public string URL { get; private set; }
-        public HiscoreGamemode(string name, string URL)
+        public string Tag { get; private set; }
+        public HiscoreGamemode(string name, string URL, string tag)
         {
             this.Name = name;
             this.URL = URL;
+            this.Tag = tag;
         }
 
         public override string ToString()

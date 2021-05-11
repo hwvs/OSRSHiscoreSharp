@@ -21,6 +21,7 @@ namespace OSRSHiscoreSharp.Data
         /// </summary>
         public long Extra { get; set; } = -1;
 
+
         public static HiscoreSingleRecord FromString(string row)
         {
             // This takes in a CSV row and fills in the 3 properties - Rank, Value, and sometimes Extra (currently only populated

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="OSRSHiscoreSharpDemo.StatListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OSRSHiscoreSharpDemo"
+             mc:Ignorable="d" 
+             d:DesignHeight="64" d:DesignWidth="200"
+             Background="#444"
+             Foreground="#fff">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100px"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Content="{Binding Path=PropertyName}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left" Foreground="#fff" FontSize="10"></Label>
+        <Image Grid.Column="1" Source="{Binding ImagePath}" HorizontalAlignment="Left" 
+    Margin="0,0,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Bottom" 
+     />
+        <Label Grid.Column="2" Content="{Binding Path=Value}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
+        <Label Grid.Column="3" Content="{Binding Path=Rank}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
+        <Label Grid.Column="4" Content="{Binding Path=Extra}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
+    </Grid>
+
+</UserControl>

@@ -7,7 +7,100 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\Bosses\abyssalSire.png" />
+    <None Remove="images\Bosses\zulrah.png" />
+    <None Remove="images\Bounty_Hunter\bhHunter.png" />
+    <None Remove="images\Clues\clueAll.png" />
+    <None Remove="images\Gamemodes\dmm.png" />
+    <None Remove="images\Gamemodes\dmmt.png" />
+    <None Remove="images\Gamemodes\hcim.png" />
+    <None Remove="images\Gamemodes\im.png" />
+    <None Remove="images\Gamemodes\normal.png" />
+    <None Remove="images\Gamemodes\sdmm.png" />
+    <None Remove="images\Gamemodes\uim.png" />
+    <None Remove="images\Minigames\lms.png" />
+    <None Remove="images\Skills\agility.png" />
+    <None Remove="images\Skills\attack.png" />
+    <None Remove="images\Skills\construction.png" />
+    <None Remove="images\Skills\cooking.png" />
+    <None Remove="images\Skills\crafting.png" />
+    <None Remove="images\Skills\defence.png" />
+    <None Remove="images\Skills\farming.png" />
+    <None Remove="images\Skills\firemaking.png" />
+    <None Remove="images\Skills\fishing.png" />
+    <None Remove="images\Skills\fletching.png" />
+    <None Remove="images\Skills\herblore.png" />
+    <None Remove="images\Skills\hitpoints.png" />
+    <None Remove="images\Skills\hunter.png" />
+    <None Remove="images\Skills\magic.png" />
+    <None Remove="images\Skills\mining.png" />
+    <None Remove="images\Skills\overall.png" />
+    <None Remove="images\Skills\prayer.png" />
+    <None Remove="images\Skills\ranged.png" />
+    <None Remove="images\Skills\runecrafting.png" />
+    <None Remove="images\Skills\slayer.png" />
+    <None Remove="images\Skills\smithing.png" />
+    <None Remove="images\Skills\strength.png" />
+    <None Remove="images\Skills\thieving.png" />
+    <None Remove="images\Skills\woodcutting.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\OSRSHiscoreSharp\OSRSHiscoreSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\Bosses\abyssalSire.png" />
+    <Resource Include="images\Bosses\zulrah.png" />
+    <Resource Include="images\Bounty_Hunter\bhHunter.png" />
+    <Resource Include="images\Clues\clueAll.png" />
+    <Resource Include="images\Gamemodes\dmm.png" />
+    <Resource Include="images\Gamemodes\dmmt.png" />
+    <Resource Include="images\Gamemodes\hcim.png" />
+    <Resource Include="images\Gamemodes\im.png" />
+    <Resource Include="images\Gamemodes\normal.png" />
+    <Resource Include="images\Gamemodes\sdmm.png" />
+    <Resource Include="images\Gamemodes\uim.png" />
+    <Resource Include="images\Minigames\lms.png" />
+    <Resource Include="images\Skills\agility.png" />
+    <Resource Include="images\Skills\attack.png" />
+    <Resource Include="images\Skills\construction.png" />
+    <Resource Include="images\Skills\cooking.png" />
+    <Resource Include="images\Skills\crafting.png" />
+    <Resource Include="images\Skills\defence.png" />
+    <Resource Include="images\Skills\farming.png" />
+    <Resource Include="images\Skills\firemaking.png" />
+    <Resource Include="images\Skills\fishing.png" />
+    <Resource Include="images\Skills\fletching.png" />
+    <Resource Include="images\Skills\herblore.png" />
+    <Resource Include="images\Skills\hitpoints.png" />
+    <Resource Include="images\Skills\hunter.png" />
+    <Resource Include="images\Skills\magic.png" />
+    <Resource Include="images\Skills\mining.png" />
+    <Resource Include="images\Skills\overall.png" />
+    <Resource Include="images\Skills\prayer.png" />
+    <Resource Include="images\Skills\ranged.png" />
+    <Resource Include="images\Skills\runecrafting.png" />
+    <Resource Include="images\Skills\slayer.png" />
+    <Resource Include="images\Skills\smithing.png" />
+    <Resource Include="images\Skills\strength.png" />
+    <Resource Include="images\Skills\thieving.png" />
+    <Resource Include="images\Skills\woodcutting.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

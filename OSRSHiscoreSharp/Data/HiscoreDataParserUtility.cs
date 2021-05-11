@@ -48,9 +48,9 @@ namespace OSRSHiscoreSharp.Data
             // Load all skills
             dequeueViaArray(result.Records.Skills, HiscoreConstants.SKILL_NAMES);
             // Load Leaguepoints
-            result.Records.LeaguePoints = queue.Dequeue();
+            dequeueViaArray(result.Records.League, HiscoreConstants.LEAGUE_NAMES);
             // Load all BountyHunter
-            dequeueViaArray(result.Records.BountyHunter, HiscoreConstants.BOUNTY_HUNTER);
+            dequeueViaArray(result.Records.BountyHunter, HiscoreConstants.BOUNTY_HUNTER_NAMES);
             // Load all clues
             dequeueViaArray(result.Records.Clues, HiscoreConstants.CLUE_NAMES);
             // Load all minigames

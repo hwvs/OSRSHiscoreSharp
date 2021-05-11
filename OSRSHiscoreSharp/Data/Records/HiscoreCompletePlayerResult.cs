@@ -20,7 +20,7 @@ namespace OSRSHiscoreSharp.Data
             public Dictionary<string, HiscoreSingleRecord> Skills { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
             public Dictionary<string, HiscoreSingleRecord> Minigames { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
 
-            public HiscoreSingleRecord LeaguePoints = new HiscoreSingleRecord();
+            public Dictionary<string, HiscoreSingleRecord> League { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
 
             public Dictionary<string, HiscoreSingleRecord> BountyHunter { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
             public Dictionary<string, HiscoreSingleRecord> Clues { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
@@ -38,7 +38,7 @@ namespace OSRSHiscoreSharp.Data
             return $"Name: {Name}\n" +
                 $"Gamemode: {Gamemode}\n\n" +
                 $"-- Skills --\n{ConvertRecordsToString(Records.Skills)}\n" +
-                $"-- League --\nLeague Points: {Records.LeaguePoints.ToString()}\n" +
+                $"-- League --\n{ConvertRecordsToString(Records.League)}\n" +
                 $"-- Minigames --\n{ConvertRecordsToString(Records.Minigames)}\n" +
                 $"-- BountyHunter --\n{ConvertRecordsToString(Records.BountyHunter)}\n" +
                 $"-- Clues --\n{ConvertRecordsToString(Records.Clues)}\n" +

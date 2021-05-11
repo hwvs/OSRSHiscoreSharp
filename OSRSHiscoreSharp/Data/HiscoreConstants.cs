@@ -35,14 +35,18 @@ namespace OSRSHiscoreSharp.Data
             "thieving",
             "slayer",
             "farming",
-            "runecraft",
+            "runecrafting",
             "hunter",
             "construction",
         };
 
-        public static readonly string[] BOUNTY_HUNTER = new string[] {
-            "hunter",
-            "rogue",
+        public static readonly string[] LEAGUE_NAMES = new string[] {
+            "leaguePoints"
+        };
+
+        public static readonly string[] BOUNTY_HUNTER_NAMES = new string[] {
+            "bhHunter",
+            "bhRogue",
         };
 
         public static readonly string[] MINIGAME_NAMES = new string[] {
@@ -51,13 +55,13 @@ namespace OSRSHiscoreSharp.Data
         };
 
         public static readonly string[] CLUE_NAMES = new string[] {
-            "all",
-            "beginner",
-            "easy",
-            "medium",
-            "hard",
-            "elite",
-            "master"
+            "clueAll",
+            "clueBeginner",
+            "clueEasy",
+            "clueMedium",
+            "clueHard",
+            "clueElite",
+            "clueMaster"
         };
 
         public static readonly string[] BOSS_NAMES = new string[] {
