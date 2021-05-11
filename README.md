@@ -1,7 +1,8 @@
-# OSRSHiscoreSharp
+# OSRSHiscoreSharp - C# OSRS Hiscore Library
+[![.NET](https://github.com/hwvs/OSRSHiscoreSharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hwvs/OSRSHiscoreSharp/actions/workflows/dotnet.yml)
+
 Easy-to-use async C# package to lookup OSRS player hiscores. If you use this in your project, please ⭐star this repo and include a link in your credits ❤️
 
-[![.NET](https://github.com/hwvs/OSRSHiscoreSharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hwvs/OSRSHiscoreSharp/actions/workflows/dotnet.yml)
 
 Usage:
 ```csharp
