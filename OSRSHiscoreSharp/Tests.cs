@@ -14,7 +14,6 @@ namespace OSRSHiscoreSharp
     public class Tests
     {
 
-        /*
         [Fact]
         public async Task TestMethod1()
         {
@@ -36,8 +35,5 @@ namespace OSRSHiscoreSharp
             await testing.TestMethod1();
             Console.ReadLine();
         }
-        */
-        public static async Task Main(string[] args)
-        { }
     }
 }
