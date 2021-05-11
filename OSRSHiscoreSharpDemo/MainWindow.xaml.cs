@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using OSRSHiscoreSharp.Data;
 using OSRSHiscoreSharp.Util;
 
@@ -40,9 +42,9 @@ namespace OSRSHiscoreSharpDemo
             {
                 foreach (var record in listResource)
                 {
-                    record.Value = -1;
-                    record.Rank = -1;
-                    record.Extra = -1;
+                    record.Value = "";
+                    record.Rank = "";
+                    record.Extra = "";
                 }
             }
             else
@@ -53,9 +55,9 @@ namespace OSRSHiscoreSharpDemo
                     foreach (var record in listResource.Where(r => r.Category == category))
                     {
                         var newRecord = records[record.PropertyName];
-                        record.Value = newRecord.Value;
-                        record.Rank = newRecord.Rank;
-                        record.Extra = newRecord.Extra;
+                        record.Value = newRecord.Value.ToString();
+                        record.Rank = newRecord.Rank.ToString();
+                        record.Extra = newRecord.Extra.ToString();
                     }
 
                     return true;
@@ -115,6 +117,44 @@ namespace OSRSHiscoreSharpDemo
 
             Gamemode = newGamemode;
             lbGamemode.Content = newGamemode.Name;
+
+        }
+
+        private async void OnClickExportCSV(object sender, RoutedEventArgs e)
+        {
+            var listResource = (StatsList)this.FindResource("StatsListData");
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(HiscoreSingleRecordView.GetCSVHeader());
+            foreach (var stat in listResource)
+            {
+                sb.AppendLine(stat.GetCSVLine());
+            }
+
+            var output = sb.ToString();
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            {
+                saveFileDialog.Filter = "All files (*.*)|*.*|CSV File (*.csv)|*.csv";
+                saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() ?? false)
+                {
+                    using (Stream myStream = saveFileDialog.OpenFile())
+                    {
+                        if (myStream != null)
+                        {
+                            using (StreamWriter sw = new StreamWriter(myStream))
+                            {
+                                await sw.WriteLineAsync(output);
+                                await sw.FlushAsync();
+                            }
+                            myStream.Close();
+                        }
+                    }
+                }
+            }
 
         }
     }

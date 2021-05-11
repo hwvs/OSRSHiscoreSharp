@@ -5,14 +5,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit.Sdk;
-using Xunit;
+
 using OSRSHiscoreSharp.Util;
 
 namespace OSRSHiscoreSharp
 {
     public class Tests
     {
+        /*
 
         [Fact]
         public async Task TestMethod1()
@@ -35,5 +35,7 @@ namespace OSRSHiscoreSharp
             await testing.TestMethod1();
             Console.ReadLine();
         }
+        */
+
     }
 }

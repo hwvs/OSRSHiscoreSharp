@@ -6,24 +6,24 @@
              xmlns:local="clr-namespace:OSRSHiscoreSharpDemo"
              mc:Ignorable="d" 
              d:DesignHeight="64" d:DesignWidth="200"
-             Background="#444"
+             Background="{Binding Path=PropertyNameColor}"
              Foreground="#fff">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100px"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="32px"/>
+            <ColumnDefinition Width="120px"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-
-        <Label Grid.Column="0" Content="{Binding Path=PropertyName}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left" Foreground="#fff" FontSize="10"></Label>
-        <Image Grid.Column="1" Source="{Binding ImagePath}" HorizontalAlignment="Left" 
-    Margin="0,0,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Bottom" 
+        <Image Grid.Column="0" Source="{Binding ImagePath}" HorizontalAlignment="Left" 
+    Margin="0,0,5,0" Name="image1" Stretch="Uniform" VerticalAlignment="Center" 
      />
-        <Label Grid.Column="2" Content="{Binding Path=Value}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
-        <Label Grid.Column="3" Content="{Binding Path=Rank}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
-        <Label Grid.Column="4" Content="{Binding Path=Extra}" HorizontalContentAlignment="Left" Foreground="#fff"></Label>
+        <Label Grid.Column="1" Content="{Binding Path=PropertyName}" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left" Foreground="#fff" FontSize="10"></Label>
+
+        <Label Grid.Column="2" Content="{Binding Path=Value}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
+        <Label Grid.Column="3" Content="{Binding Path=Rank}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
+        <Label Grid.Column="4" Content="{Binding Path=Extra}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
     </Grid>
 
 </UserControl>

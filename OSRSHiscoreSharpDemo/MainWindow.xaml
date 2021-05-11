@@ -28,6 +28,7 @@
             <RowDefinition Height="80px" />
             <RowDefinition Height="40px" />
             <RowDefinition Height="25px" />
+            <RowDefinition Height="32px" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="48px" />
@@ -51,13 +52,27 @@
 
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Top" Margin="5,5,5,0" Grid.ColumnSpan="2">
-            <Button Grid.Column="1" Click = "OnClickLookup">Lookup</Button>
+            <Button Grid.Column="1" Click = "OnClickLookup" Background="#1e1e3e" Foreground="#fff">Lookup</Button>
         </Grid>
         <Label Grid.Row="1" Foreground="#fff" VerticalAlignment="Top" FontSize="12px" Margin="0,35,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Name="lbStatus">Waiting...</TextBlock>
         </Label>
 
-        <ListBox x:Name="lvStatsList" Grid.Row="3"  Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#252525" 
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32px"/>
+                <ColumnDefinition Width="120px"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="2" Foreground="#FFE8AA26">Level</Label>
+            <Label Grid.Column="3" Foreground="#FFE8AA26">Rank</Label>
+            <Label Grid.Column="4" Foreground="#FFE8AA26">XP</Label>
+        </Grid>
+
+        <ListBox x:Name="lvStatsList" Grid.Row="4"  Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#252525" 
                   ItemsSource="{Binding Source={StaticResource StatsListData}}"  
          ItemTemplate="{StaticResource statsItemTemplate}"  
          IsSynchronizedWithCurrentItem="True"
@@ -66,7 +81,7 @@
                  >
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
-                    <Setter Property="Height" Value="64" />
+                    <Setter Property="Height" Value="48" />
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
@@ -74,7 +89,7 @@
             <TextBlock Name="lbDebug" ScrollViewer.VerticalScrollBarVisibility="Visible">[debug]</TextBlock>
         </Label>-->
 
-        <Grid Grid.Row="5" VerticalAlignment="Top" Margin="10" Grid.ColumnSpan="2">
+        <Grid Grid.Row="6" VerticalAlignment="Top" Margin="10" Grid.ColumnSpan="2" Background="#111">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="32px" />
                 <ColumnDefinition Width="32px" />
@@ -84,6 +99,7 @@
                 <ColumnDefinition Width="32px" />
                 <ColumnDefinition Width="32px" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="128px" />
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Click = "OnClickGamemode" Tag="normal">
                 <Button.Content>
@@ -116,6 +132,12 @@
                 </Button.Content></Button>
 
             <Label Grid.Column="7" Content="Normal" x:Name="lbGamemode" Foreground="#fff"></Label>
+
+            <Button Grid.Column="8" Click = "OnClickExportCSV"  >
+                <Button.Content>
+                    Export CSV
+                </Button.Content>
+            </Button>
         </Grid>
     </Grid>
 </Window>
