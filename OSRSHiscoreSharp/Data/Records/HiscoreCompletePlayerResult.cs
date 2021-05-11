@@ -13,9 +13,9 @@ namespace OSRSHiscoreSharp.Data
         public string Name { get; internal set; }
         public HiscoreGamemode Gamemode { get; internal set; }
 
-        public HiscoreRecords Records = new HiscoreRecords();
+        public HiscoreRecordsContainer Records = new HiscoreRecordsContainer();
 
-        public class HiscoreRecords
+        public class HiscoreRecordsContainer
         {
             public Dictionary<string, HiscoreSingleRecord> Skills { get; set; } = new Dictionary<string, HiscoreSingleRecord>();
             public Dictionary<string, HiscoreSingleRecord> Minigames { get; set; } = new Dictionary<string, HiscoreSingleRecord>();

@@ -8,8 +8,17 @@ namespace OSRSHiscoreSharp.Data
 {
     public class HiscoreSingleRecord
     {
+        /// <summary>
+        /// The player rank on the highscores
+        /// </summary>
         public long Rank { get; set; } = -1;
+        /// <summary>
+        /// The value of the property on the highscores
+        /// </summary>
         public long Value { get; set; } = -1;
+        /// <summary>
+        /// The second value - currently only used for the raw XP field on the highscores
+        /// </summary>
         public long Extra { get; set; } = -1;
 
         public static HiscoreSingleRecord FromString(string row)

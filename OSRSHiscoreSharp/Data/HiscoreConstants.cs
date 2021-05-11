@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace OSRSHiscoreSharp.Data
 {
-    internal class HiscoreConstants
+    public class HiscoreConstants
     {
         internal const string URL_HISCORES_PREFIX = "https://secure.runescape.com/m=hiscore_oldschool";
         internal const string URL_HISCORES_PATH = "/index_lite.ws";
         internal const string URL_HISCORES_PARAM = "player";
-        
 
-        internal static readonly string[] SKILL_NAMES = new string[] {
+
+        public static readonly string[] SKILL_NAMES = new string[] {
             "overall",
             "attack",
             "defence",
@@ -40,17 +40,17 @@ namespace OSRSHiscoreSharp.Data
             "construction",
         };
 
-        internal static readonly string[] BOUNTY_HUNTER = new string[] {
+        public static readonly string[] BOUNTY_HUNTER = new string[] {
             "hunter",
             "rogue",
         };
 
-        internal static readonly string[] MINIGAME_NAMES = new string[] {
+        public static readonly string[] MINIGAME_NAMES = new string[] {
             "lms",
             "soulwars",
         };
 
-        internal static readonly string[] CLUE_NAMES = new string[] {
+        public static readonly string[] CLUE_NAMES = new string[] {
             "all",
             "beginner",
             "easy",
@@ -60,7 +60,7 @@ namespace OSRSHiscoreSharp.Data
             "master"
         };
 
-        internal static readonly string[] BOSS_NAMES = new string[] {
+        public static readonly string[] BOSS_NAMES = new string[] {
             "abyssalSire",
             "alchemicalHydra",
             "barrows",

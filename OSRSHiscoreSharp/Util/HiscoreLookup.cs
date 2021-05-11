@@ -37,15 +37,15 @@ namespace OSRSHiscoreSharp.Util
         /// <summary>
         /// Performs a lookup a player and returns the results as an HiscoreCompletePlayerRecord object
         /// </summary>
-        /// <param name="playername">The name of the player as a string</param>
+        /// <param name="playerName">The name of the player as a string</param>
         /// <param name="gamemode">The type of account to lookup, as a HiscoreGamemode object (EG: HiscoreGamemode.IRONMAN)</param>
         /// <returns>Returns HiscoreCompletePlayerRecord on success, null on failure, throws exception if error</returns>
-        public async static Task<HiscoreCompletePlayerResult> LookupPlayerStats(string playername, HiscoreGamemode gamemode = null)
+        public async static Task<HiscoreCompletePlayerResult> LookupPlayerStats(string playerName, HiscoreGamemode gamemode = null)
         {
             if (gamemode == null)
                 gamemode = HiscoreGamemode.NORMAL;
 
-            string uri = $"{HiscoreConstants.URL_HISCORES_PREFIX}{gamemode.URL}{HiscoreConstants.URL_HISCORES_PATH}?{HiscoreConstants.URL_HISCORES_PARAM}={Uri.EscapeDataString(playername)}";
+            string uri = $"{HiscoreConstants.URL_HISCORES_PREFIX}{gamemode.URL}{HiscoreConstants.URL_HISCORES_PATH}?{HiscoreConstants.URL_HISCORES_PARAM}={Uri.EscapeDataString(playerName)}";
             string data;
             try
             {
@@ -68,7 +68,7 @@ namespace OSRSHiscoreSharp.Util
 
             var player = HiscoreDataParserUtility.CreatePlayerRecordFromCSV(data);
 
-            player.Name = playername;
+            player.Name = playerName;
             player.Gamemode = gamemode;
 
             return player;
