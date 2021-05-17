@@ -20,6 +20,7 @@ namespace OSRSHiscoreSharpDemo
                     var r = new HiscoreSingleRecordView(new HiscoreSingleRecord());
                     r.Category = category;
                     r.PropertyName = skillName;
+                    r.Name = skillName.FirstCharToUpper();
                     //r.ImagePath = $"images\\{r.Category}\\{r.Name}.png";
                     r.ImagePath = $"/OSRSHiscoreSharpDemo;component/images/{r.Category.ToString()}/{r.PropertyName}.png";
                     r.PropertyNameColor = background;
@@ -30,9 +31,9 @@ namespace OSRSHiscoreSharpDemo
             };
 
 
-            initSkillIcons(HiscoreConstants.SKILL_NAMES, HiscoreSingleRecordView.RecordCategory.Skills, new SolidColorBrush(Color.FromArgb(255, 0x11, 0x11, 0x11)));
+            initSkillIcons(HiscoreConstants.SKILL_NAMES, HiscoreSingleRecordView.RecordCategory.Skills, new SolidColorBrush(Color.FromArgb(255, 29, 28, 36)));//new SolidColorBrush(Color.FromArgb(255, 0x11, 0x11, 0x11)));
             initSkillIcons(HiscoreConstants.BOUNTY_HUNTER_NAMES, HiscoreSingleRecordView.RecordCategory.Bounty_Hunter, new SolidColorBrush(Color.FromArgb(255, 0x3e, 0x1e, 0x2e)));
-            initSkillIcons(HiscoreConstants.LEAGUE_NAMES, HiscoreSingleRecordView.RecordCategory.League, new SolidColorBrush(Color.FromArgb(255, 0x11, 0x11, 0x11)));
+            initSkillIcons(HiscoreConstants.LEAGUE_NAMES, HiscoreSingleRecordView.RecordCategory.League, new SolidColorBrush(Color.FromArgb(255, 0x1e, 0x1e, 0x3e)));
             initSkillIcons(HiscoreConstants.CLUE_NAMES, HiscoreSingleRecordView.RecordCategory.Clues, new SolidColorBrush(Color.FromArgb(255, 0x3e, 0x3e, 0x1e)));
             initSkillIcons(HiscoreConstants.MINIGAME_NAMES, HiscoreSingleRecordView.RecordCategory.Minigames, new SolidColorBrush(Color.FromArgb(255, 0x1e, 0x3e, 0x2e)));
             initSkillIcons(HiscoreConstants.BOSS_NAMES, HiscoreSingleRecordView.RecordCategory.Bosses, new SolidColorBrush(Color.FromArgb(255, 0x1e, 0x1e, 0x3e)));
@@ -42,30 +43,34 @@ namespace OSRSHiscoreSharpDemo
 
     public class HiscoreSingleRecordView : INotifyPropertyChanged
     {
-        private string _rank = "";
+        Func<object, string> formatValue = (val) => {
+            return (val.Equals("-") || Convert.ToInt64(val) >= 0) ? val.ToString() : "-";
+        };
+
+        private string _rank = "-";
         public string Rank { get { return _rank;  } set
             {
-                _rank = Convert.ToInt64(value) >= 0 ? value.ToString() : "";
+                _rank = formatValue(value);
                 NotifyPropertyChanged("Rank");
             }
         }
-        private string _value = "";
+        private string _value = "-";
         public string Value
         {
             get { return _value.ToString(); }
             set
             {
-                _value = Convert.ToInt64(value) >= 0 ? value.ToString() : "";
+                _value = formatValue(value);
                 NotifyPropertyChanged("Value");
             }
         }
-        private string _extra = "";
+        private string _extra = "-";
         public string Extra
         {
             get { return _extra.ToString(); }
             set
             {
-                _extra = Convert.ToInt64(value) >= 0 ? value.ToString() : "";
+                _extra = formatValue(value);
                 NotifyPropertyChanged("Extra");
             }
         }
@@ -89,6 +94,7 @@ namespace OSRSHiscoreSharpDemo
         public RecordCategory Category { get; set; }
 
         public string PropertyName { get; internal set; }
+        public string Name { get; internal set; }
         public SolidColorBrush PropertyNameColor { get; set; } = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
         public string ImagePath { get; internal set; }
 

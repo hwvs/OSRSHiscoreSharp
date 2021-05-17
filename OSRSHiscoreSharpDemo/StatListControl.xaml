@@ -5,25 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:OSRSHiscoreSharpDemo"
              mc:Ignorable="d" 
-             d:DesignHeight="64" d:DesignWidth="200"
+             d:DesignHeight="128" d:DesignWidth="128"
              Background="{Binding Path=PropertyNameColor}"
-             Foreground="#fff">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="32px"/>
-            <ColumnDefinition Width="120px"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Source="{Binding ImagePath}" HorizontalAlignment="Left" 
+             Foreground="#fff" Padding="5px">
+    <StackPanel Orientation="Vertical">
+        <Border  Background="Red" Panel.ZIndex="1">
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="1" Softness="2" />
+            </Border.BitmapEffect>
+        </Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32px"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" Source="{Binding ImagePath}" HorizontalAlignment="Left" 
     Margin="0,0,5,0" Name="image1" Stretch="Uniform" VerticalAlignment="Center" 
+                   Width="32px" Height="32px"
      />
-        <Label Grid.Column="1" Content="{Binding Path=PropertyName}" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left" Foreground="#fff" FontSize="10"></Label>
+            <Label Grid.Row="1" Content="{Binding Path=Name}" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left" Foreground="#fff" FontSize="12" FontWeight="Black"></Label>
 
-        <Label Grid.Column="2" Content="{Binding Path=Value}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
-        <Label Grid.Column="3" Content="{Binding Path=Rank}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
-        <Label Grid.Column="4" Content="{Binding Path=Extra}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"></Label>
-    </Grid>
+            <Label Grid.Row="2" Content="{Binding Path=Value}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff"  FontWeight="Bold" FontSize="14"></Label>
+            <Label Grid.Row="3" Content="{Binding Path=Rank}" ContentStringFormat="Rank: {0}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff" FontSize="10"></Label>
+            <Label Grid.Row="4" Content="{Binding Path=Extra}" ContentStringFormat="XP: {0}" HorizontalContentAlignment="Left" VerticalAlignment="Center"  Foreground="#fff" FontSize="10"></Label>
+
+        </Grid>
+    </StackPanel>
 
 </UserControl>

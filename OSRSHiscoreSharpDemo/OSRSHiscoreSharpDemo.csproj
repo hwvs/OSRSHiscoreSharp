@@ -8,9 +8,30 @@
 
   <ItemGroup>
     <None Remove="images\Bosses\abyssalSire.png" />
+    <None Remove="images\Bosses\alchemicalHydra.png" />
+    <None Remove="images\Bosses\barrows.png" />
+    <None Remove="images\Bosses\bryophyta.png" />
+    <None Remove="images\Bosses\callisto.png" />
+    <None Remove="images\Bosses\cerberus.png" />
+    <None Remove="images\Bosses\chambersOfXeric.png" />
+    <None Remove="images\Bosses\chambersOfXericChallengeMode.png" />
+    <None Remove="images\Bosses\chaosElemental.png" />
+    <None Remove="images\Bosses\chaosFanatic.png" />
+    <None Remove="images\Bosses\commanderZilyana.png" />
+    <None Remove="images\Bosses\obor.png" />
+    <None Remove="images\Bosses\vorkath.png" />
+    <None Remove="images\Bosses\wintertodt.png" />
+    <None Remove="images\Bosses\zalcano.png" />
     <None Remove="images\Bosses\zulrah.png" />
     <None Remove="images\Bounty_Hunter\bhHunter.png" />
+    <None Remove="images\Bounty_Hunter\bhRogue.png" />
     <None Remove="images\Clues\clueAll.png" />
+    <None Remove="images\Clues\clueBeginner.png" />
+    <None Remove="images\Clues\clueEasy.png" />
+    <None Remove="images\Clues\clueElite.png" />
+    <None Remove="images\Clues\clueHard.png" />
+    <None Remove="images\Clues\clueMaster.png" />
+    <None Remove="images\Clues\clueMedium.png" />
     <None Remove="images\Gamemodes\dmm.png" />
     <None Remove="images\Gamemodes\dmmt.png" />
     <None Remove="images\Gamemodes\hcim.png" />
@@ -18,7 +39,9 @@
     <None Remove="images\Gamemodes\normal.png" />
     <None Remove="images\Gamemodes\sdmm.png" />
     <None Remove="images\Gamemodes\uim.png" />
+    <None Remove="images\League\leaguePoints.png" />
     <None Remove="images\Minigames\lms.png" />
+    <None Remove="images\Minigames\soulwars.png" />
     <None Remove="images\Skills\agility.png" />
     <None Remove="images\Skills\attack.png" />
     <None Remove="images\Skills\construction.png" />
@@ -46,14 +69,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\OSRSHiscoreSharp\OSRSHiscoreSharp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="images\Bosses\abyssalSire.png" />
+    <Resource Include="images\Bosses\alchemicalHydra.png" />
+    <Resource Include="images\Bosses\barrows.png" />
+    <Resource Include="images\Bosses\bryophyta.png" />
+    <Resource Include="images\Bosses\callisto.png" />
+    <Resource Include="images\Bosses\cerberus.png" />
+    <Resource Include="images\Bosses\chambersOfXeric.png" />
+    <Resource Include="images\Bosses\chambersOfXericChallengeMode.png" />
+    <Resource Include="images\Bosses\chaosElemental.png" />
+    <Resource Include="images\Bosses\chaosFanatic.png" />
+    <Resource Include="images\Bosses\commanderZilyana.png" />
+    <Resource Include="images\Bosses\obor.png" />
+    <Resource Include="images\Bosses\vorkath.png" />
+    <Resource Include="images\Bosses\wintertodt.png" />
+    <Resource Include="images\Bosses\zalcano.png" />
     <Resource Include="images\Bosses\zulrah.png" />
     <Resource Include="images\Bounty_Hunter\bhHunter.png" />
+    <Resource Include="images\Bounty_Hunter\bhRogue.png" />
     <Resource Include="images\Clues\clueAll.png" />
+    <Resource Include="images\Clues\clueBeginner.png" />
+    <Resource Include="images\Clues\clueEasy.png" />
+    <Resource Include="images\Clues\clueElite.png" />
+    <Resource Include="images\Clues\clueHard.png" />
+    <Resource Include="images\Clues\clueMaster.png" />
+    <Resource Include="images\Clues\clueMedium.png" />
     <Resource Include="images\Gamemodes\dmm.png" />
     <Resource Include="images\Gamemodes\dmmt.png" />
     <Resource Include="images\Gamemodes\hcim.png" />
@@ -61,7 +109,9 @@
     <Resource Include="images\Gamemodes\normal.png" />
     <Resource Include="images\Gamemodes\sdmm.png" />
     <Resource Include="images\Gamemodes\uim.png" />
+    <Resource Include="images\League\leaguePoints.png" />
     <Resource Include="images\Minigames\lms.png" />
+    <Resource Include="images\Minigames\soulwars.png" />
     <Resource Include="images\Skills\agility.png" />
     <Resource Include="images\Skills\attack.png" />
     <Resource Include="images\Skills\construction.png" />
@@ -101,6 +151,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MainWindow - Copy.xaml.old">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 
 </Project>

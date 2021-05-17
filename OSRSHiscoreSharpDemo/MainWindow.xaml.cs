@@ -31,6 +31,7 @@ namespace OSRSHiscoreSharpDemo
         public MainWindow()
         {
             InitializeComponent();
+            canvasLoadingIcon.Visibility = Visibility.Hidden;
         }
 
         public void UpdateView(HiscoreCompletePlayerResult player)
@@ -75,6 +76,7 @@ namespace OSRSHiscoreSharpDemo
 
         private async void OnClickLookup(object sender, RoutedEventArgs e)
         {
+            canvasLoadingIcon.Visibility = Visibility.Visible;
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait; // set the cursor to loading spinner
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -94,6 +96,9 @@ namespace OSRSHiscoreSharpDemo
                     //lbDebug.Text = player.ToString();
 
                     lbStatus.Text = $"Lookup completed in {sw.ElapsedMilliseconds} ms";
+
+
+                    UpdateView(player);
                 }
 
             }
@@ -102,9 +107,9 @@ namespace OSRSHiscoreSharpDemo
                 lbStatus.Text = $"Error: {ex.Message}";
             }
 
-            UpdateView(player);
 
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow; // set the cursor back to arrow
+            canvasLoadingIcon.Visibility = Visibility.Hidden;
         }
 
         private void OnClickGamemode(object sender, RoutedEventArgs e)
@@ -155,6 +160,11 @@ namespace OSRSHiscoreSharpDemo
                     }
                 }
             }
+
+        }
+
+        private void lvStatsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }
